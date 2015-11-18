@@ -21,6 +21,7 @@
 #import "HCDPageControl.h"
 #import "UIColor+HcdCustom.h"
 #import "UIView+HcdCustom.h"
+#import "NSString+HcdCustom.h"
 
 #define kHCDPageControlItemFont (15)
 #define kHCDPageControlHSpace (0)
@@ -28,6 +29,7 @@
 #define kHCDPageControlAnimationTime (0.3)
 #define kHCDPageControlIconWidth (50)
 #define kHCDPageControlIconSpace (4)
+#define kHCDPageControlAutoResizePadding (15)
 #define kScreen_Height [UIScreen mainScreen].bounds.size.height
 #define kScreen_Width [UIScreen mainScreen].bounds.size.width
 
@@ -188,33 +190,33 @@ typedef NS_ENUM(NSInteger, HCDPageControlItemType)
 
 @implementation HCDPageControl
 
-- (id)initWithFrame:(CGRect)frame items:(NSArray *)titleItem withIcon:(BOOL)withIcon
+- (id)initWithFrame:(CGRect)frame items:(NSArray *)titleItem autoResize:(BOOL)autoResize withIcon:(BOOL)withIcon
 {
     if (self = [super initWithFrame:frame]) {
-        [self initUIWith:withIcon Items:titleItem];
+        [self initUIWith:withIcon items:titleItem autoResize:autoResize];
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame items:(NSArray *)titleItem
+- (id)initWithFrame:(CGRect)frame items:(NSArray *)titleItem autoResize:(BOOL)autoResize
 {
     if (self = [super initWithFrame:frame]) {
-        [self initUIWith:NO Items:titleItem];
+        [self initUIWith:NO items:titleItem autoResize:autoResize];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items delegate:(id<HCDPageControlDelegate>)delegate
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items autoResize:(BOOL)autoResize delegate:(id<HCDPageControlDelegate>)delegate
 {
-    if (self = [self initWithFrame:frame items:items]) {
+    if (self = [self initWithFrame:frame items:items autoResize:autoResize]) {
         self.delegate = delegate;
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items selectedBlock:(HCDPageControlBlock)selectedHandle
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items autoResize:(BOOL)autoResize selectedBlock:(HCDPageControlBlock)selectedHandle
 {
-    if (self = [self initWithFrame:frame items:items]) {
+    if (self = [self initWithFrame:frame items:items autoResize:autoResize]) {
         self.block = selectedHandle;
     }
     return self;
@@ -222,7 +224,7 @@ typedef NS_ENUM(NSInteger, HCDPageControlItemType)
 
 - (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items withIcon:(BOOL)withIcon selectedBlock:(HCDPageControlBlock)selectedHandle
 {
-    if (self = [self initWithFrame:frame items:items withIcon:withIcon]) {
+    if (self = [self initWithFrame:frame items:items autoResize:YES withIcon:withIcon]) {
         self.block = selectedHandle;
     }
     return self;
@@ -261,7 +263,7 @@ typedef NS_ENUM(NSInteger, HCDPageControlItemType)
     }
 }
 
-- (void)initUIWith:(BOOL)isIcon Items:(NSArray *)titleItem
+- (void)initUIWith:(BOOL)isIcon items:(NSArray *)titleItem autoResize:(BOOL)autoResize
 {
     _contentView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
@@ -277,10 +279,10 @@ typedef NS_ENUM(NSInteger, HCDPageControlItemType)
         scrollView;
     });
     
-    [self initItemsWithTitleArray:titleItem withIcon:isIcon];
+    [self initItemsWithTitleArray:titleItem withIcon:isIcon autoResize:autoResize];
 }
 
-- (void)initItemsWithTitleArray:(NSArray *)titleArray withIcon:(BOOL)withIcon
+- (void)initItemsWithTitleArray:(NSArray *)titleArray withIcon:(BOOL)withIcon autoResize:(BOOL)autoResize
 {
     _itemFrames = @[].mutableCopy;
     _items = @[].mutableCopy;
@@ -292,6 +294,10 @@ typedef NS_ENUM(NSInteger, HCDPageControlItemType)
         for (int i = 0; i < titleArray.count; i++) {
             float x = i > 0 ? CGRectGetMaxX([_itemFrames[i-1] CGRectValue]) : 0;
             float width = kScreen_Width/titleArray.count;
+            if (autoResize) {
+                NSString * title = titleArray[i];
+                width = [title getWidthWithFont:[UIFont systemFontOfSize:kHCDPageControlItemFont] constrainedToSize:CGSizeMake(MAXFLOAT, 20)]+kHCDPageControlAutoResizePadding;
+            }
             CGRect rect = CGRectMake(x, y, width, height);
             [_itemFrames addObject:[NSValue valueWithCGRect:rect]];
         }

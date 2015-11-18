@@ -14,9 +14,10 @@
 		35DEE6101BFC6ABD007B1FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DEE60F1BFC6ABD007B1FE8 /* Assets.xcassets */; };
 		35DEE6131BFC6ABD007B1FE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DEE6111BFC6ABD007B1FE8 /* LaunchScreen.storyboard */; };
 		35DEE6201BFC6B77007B1FE8 /* HCDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE61F1BFC6B77007B1FE8 /* HCDPageControl.m */; };
-		35DEE6231BFC7453007B1FE8 /* UIColor+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE6221BFC7453007B1FE8 /* UIColor+HcdCustom.m */; };
-		35DEE6261BFC75C6007B1FE8 /* UIView+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE6251BFC75C6007B1FE8 /* UIView+HcdCustom.m */; };
 		35DEE62A1BFC843C007B1FE8 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE6291BFC843C007B1FE8 /* iCarousel.m */; };
+		35DEE64C1BFCB186007B1FE8 /* UIColor+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE6491BFCB186007B1FE8 /* UIColor+HcdCustom.m */; };
+		35DEE64D1BFCB186007B1FE8 /* UIView+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE64B1BFCB186007B1FE8 /* UIView+HcdCustom.m */; };
+		35DEE6501BFCB4E8007B1FE8 /* NSString+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DEE64F1BFCB4E8007B1FE8 /* NSString+HcdCustom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +33,14 @@
 		35DEE6141BFC6ABD007B1FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35DEE61E1BFC6B77007B1FE8 /* HCDPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCDPageControl.h; sourceTree = "<group>"; };
 		35DEE61F1BFC6B77007B1FE8 /* HCDPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCDPageControl.m; sourceTree = "<group>"; };
-		35DEE6211BFC7453007B1FE8 /* UIColor+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HcdCustom.h"; sourceTree = "<group>"; };
-		35DEE6221BFC7453007B1FE8 /* UIColor+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HcdCustom.m"; sourceTree = "<group>"; };
-		35DEE6241BFC75C6007B1FE8 /* UIView+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HcdCustom.h"; sourceTree = "<group>"; };
-		35DEE6251BFC75C6007B1FE8 /* UIView+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HcdCustom.m"; sourceTree = "<group>"; };
 		35DEE6281BFC843C007B1FE8 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		35DEE6291BFC843C007B1FE8 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		35DEE6481BFCB186007B1FE8 /* UIColor+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HcdCustom.h"; sourceTree = "<group>"; };
+		35DEE6491BFCB186007B1FE8 /* UIColor+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HcdCustom.m"; sourceTree = "<group>"; };
+		35DEE64A1BFCB186007B1FE8 /* UIView+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HcdCustom.h"; sourceTree = "<group>"; };
+		35DEE64B1BFCB186007B1FE8 /* UIView+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HcdCustom.m"; sourceTree = "<group>"; };
+		35DEE64E1BFCB4E8007B1FE8 /* NSString+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HcdCustom.h"; sourceTree = "<group>"; };
+		35DEE64F1BFCB4E8007B1FE8 /* NSString+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HcdCustom.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 		35DEE6021BFC6ABD007B1FE8 /* hcdViewPager */ = {
 			isa = PBXGroup;
 			children = (
+				35DEE6461BFCB157007B1FE8 /* Utils */,
 				35DEE6271BFC843C007B1FE8 /* iCarousel */,
 				35DEE61A1BFC6AD7007B1FE8 /* hcdViewPager */,
 				35DEE6061BFC6ABD007B1FE8 /* AppDelegate.h */,
@@ -96,10 +100,6 @@
 		35DEE61A1BFC6AD7007B1FE8 /* hcdViewPager */ = {
 			isa = PBXGroup;
 			children = (
-				35DEE6211BFC7453007B1FE8 /* UIColor+HcdCustom.h */,
-				35DEE6221BFC7453007B1FE8 /* UIColor+HcdCustom.m */,
-				35DEE6241BFC75C6007B1FE8 /* UIView+HcdCustom.h */,
-				35DEE6251BFC75C6007B1FE8 /* UIView+HcdCustom.m */,
 				35DEE61E1BFC6B77007B1FE8 /* HCDPageControl.h */,
 				35DEE61F1BFC6B77007B1FE8 /* HCDPageControl.m */,
 			);
@@ -114,6 +114,27 @@
 			);
 			name = iCarousel;
 			path = hcdViewPager/iCarousel;
+			sourceTree = "<group>";
+		};
+		35DEE6461BFCB157007B1FE8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				35DEE6471BFCB167007B1FE8 /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		35DEE6471BFCB167007B1FE8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				35DEE6481BFCB186007B1FE8 /* UIColor+HcdCustom.h */,
+				35DEE6491BFCB186007B1FE8 /* UIColor+HcdCustom.m */,
+				35DEE64A1BFCB186007B1FE8 /* UIView+HcdCustom.h */,
+				35DEE64B1BFCB186007B1FE8 /* UIView+HcdCustom.m */,
+				35DEE64E1BFCB4E8007B1FE8 /* NSString+HcdCustom.h */,
+				35DEE64F1BFCB4E8007B1FE8 /* NSString+HcdCustom.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,10 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35DEE64D1BFCB186007B1FE8 /* UIView+HcdCustom.m in Sources */,
+				35DEE64C1BFCB186007B1FE8 /* UIColor+HcdCustom.m in Sources */,
 				35DEE6201BFC6B77007B1FE8 /* HCDPageControl.m in Sources */,
 				35DEE60B1BFC6ABD007B1FE8 /* ViewController.m in Sources */,
-				35DEE6231BFC7453007B1FE8 /* UIColor+HcdCustom.m in Sources */,
-				35DEE6261BFC75C6007B1FE8 /* UIView+HcdCustom.m in Sources */,
+				35DEE6501BFCB4E8007B1FE8 /* NSString+HcdCustom.m in Sources */,
 				35DEE6081BFC6ABD007B1FE8 /* AppDelegate.m in Sources */,
 				35DEE62A1BFC843C007B1FE8 /* iCarousel.m in Sources */,
 				35DEE6051BFC6ABD007B1FE8 /* main.m in Sources */,

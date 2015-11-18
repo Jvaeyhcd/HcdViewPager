@@ -22,9 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _pageControlItems = [[NSMutableArray alloc]initWithObjects:@"课程列表",@"课程列表", nil];
-    _pageControl = [[HCDPageControl alloc]initWithFrame:CGRectMake(0, 64, 320, 40) items:_pageControlItems selectedBlock:^(NSInteger index){
-        
+    _pageControlItems = [[NSMutableArray alloc]initWithObjects:@"课程列表",@"课程重点",@"课后作业", nil];
+    _pageControl = [[HCDPageControl alloc]initWithFrame:CGRectMake(0, 64, 320, 40) items:_pageControlItems autoResize:NO selectedBlock:^(NSInteger index){
+        [_myCarousel scrollToItemAtIndex:index animated:NO];
     }];
     _pageControl.backgroundColor = [UIColor colorWithHexString:@"0xFFFFFF"];
     
@@ -96,14 +96,6 @@
     if (_pageControl) {
         _pageControl.currentIndex = carousel.currentItemIndex;
     }
-    //    if (_oldSelectedIndex != carousel.currentItemIndex) {
-    //        _oldSelectedIndex = carousel.currentItemIndex;
-    //        ProjectListView *curView = (ProjectListView *)carousel.currentItemView;
-    //        [curView refreshToQueryData];
-    //    }
-//    [carousel.visibleItemViews enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
-//        [obj setSubScrollsToTop:(obj == carousel.currentItemView)];
-//    }];
 }
 
 @end

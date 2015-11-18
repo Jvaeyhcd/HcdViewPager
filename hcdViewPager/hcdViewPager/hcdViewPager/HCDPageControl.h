@@ -38,8 +38,8 @@ typedef void(^HCDPageControlBlock)(NSInteger index);
 
 @property (nonatomic) NSInteger currentIndex;
 
-- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items delegate:(id<HCDPageControlDelegate>)delegate;
-- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items selectedBlock:(HCDPageControlBlock)selectedHandle;
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items autoResize:(BOOL)autoResize delegate:(id<HCDPageControlDelegate>)delegate;
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items autoResize:(BOOL)autoResize selectedBlock:(HCDPageControlBlock)selectedHandle;
 - (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items withIcon:(BOOL)withIcon selectedBlock:(HCDPageControlBlock)selectedHandle;
 
 - (void)selectIndex:(NSInteger)index;
